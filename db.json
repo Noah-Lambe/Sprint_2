@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "description": "A high-performance laptop for gaming and work.",
+      "price": 1299.99,
+      "tax": 0.15,
+      "category": "Computers",
+      "image": "/assets/images/macbook.png",
+      "brand": "TechBrand",
+      "rating": 4.5,
+      "inStock": true,
+      "availability": {
+        "delivery": true,
+        "store": false
+      },
+      "deliverySelected": true,
+      "inCart": true
+    },
+    {
+      "id": "2",
+      "name": "Smartphone",
+      "description": "A latest generation smartphone with all the modern features.",
+      "price": 799.99,
+      "tax": 0.15,
+      "category": "Mobile Phones",
+      "image": "/assets/images/iphone.png",
+      "brand": "MobileTech",
+      "rating": 4.7,
+      "inStock": true,
+      "availability": {
+        "delivery": true,
+        "store": true
+      },
+      "deliverySelected": true,
+      "inCart": true
+    },
+    {
+      "id": "3",
+      "name": "Smartwatch",
+      "description": "A smartwatch with health tracking and notifications.",
+      "price": 199.99,
+      "tax": 0.15,
+      "category": "Wearables",
+      "image": "/assets/images/applewatch.png",
+      "brand": "WearableTech",
+      "rating": 4.2,
+      "inStock": false,
+      "availability": {
+        "delivery": false,
+        "store": false
+      },
+      "deliverySelected": true,
+      "inCart": true
+    },
+    {
+      "id": "4",
+      "name": "Headphones",
+      "description": "Noise-cancelling wireless headphones with great sound quality.",
+      "price": 149.99,
+      "tax": 0.15,
+      "category": "Accessories",
+      "image": "/assets/images/beats.png",
+      "brand": "SoundTech",
+      "rating": 4.6,
+      "inStock": true,
+      "availability": {
+        "delivery": false,
+        "store": true
+      },
+      "deliverySelected": true,
+      "inCart": true
+    }
+  ]
+}

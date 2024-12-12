@@ -1,0 +1,86 @@
+/* Title:  Final Sprint - Term 2
+   Author: Noah Whiffen - SD12
+   Dates:  December 7th, 2024 - December 8th, 2024 */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+}
+
+.topHeader {
+  width: 100%;
+  height: 200px;
+  background-color: #392e5a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.headerLinks {
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.headerLinks:hover {
+  transform: scale(1.15);
+}
+
+.headerLinks:visited {
+  color: #9dd9d2;
+}
+
+.headerImage {
+  position: absolute;
+  left: 0;
+  object-fit: cover;
+  padding: 10px 45px;
+  width: 35%;
+}
+
+.IconImages {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.bottomHeader {
+  width: 100%;
+  height: 45px;
+  padding-left: 35px;
+  padding-bottom: 5px;
+  background-color: #2e2547;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.bottomHeader a {
+  /* I had to add a seperate style for the bottom links to not stack vertically*/
+  color: white;
+  text-decoration: none;
+  margin-right: 25px;
+  display: inline-flex;
+  align-items: center;
+}
