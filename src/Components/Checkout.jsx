@@ -65,24 +65,6 @@ const CheckoutPortal = () => {
 
   return (
     <div className="checkout-portal">
-      <div className="order-summary">
-        <h2>Order Summary</h2>
-        <div className="product-details">
-          <p className="product-name">MSI Ventus 2x Graphics Card</p>
-          <p className="product-price">$376.99</p>
-          <p className="product-quantity">Nvidia RTX 3060 Qty: 1</p>
-        </div>
-        <div className="discount-section">
-          <input type="text" placeholder="Gift or discount code" className="discount-input" />
-          <button className="apply-button">Apply</button>
-        </div>
-        <div className="price-summary">
-          <p>Subtotal: <span>$433.54</span></p>
-          <p>Shipping: <span>$29.99</span></p>
-          <p>Total (incl. $56.55 taxes): <span>$463.53</span></p>
-        </div>
-      </div>
-
       <div className="payment-section">
         <h2>Payment</h2>
         <form onSubmit={handlePaymentSubmit}>

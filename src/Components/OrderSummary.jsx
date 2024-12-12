@@ -1,38 +1,33 @@
 import React from "react";
+import "./OrderSummary.css";
 
 const OrderSummary = ({ products }) => {
-  // Calculate the subtotal by summing the prices of all products
   const calculateSubtotal = () => {
     return products.reduce((total, product) => total + product.price, 0);
   };
 
-  // Calculate taxes by summing the product of each product's price and tax rate
   const calculateTaxes = () => {
     return products.reduce((total, product) => total + (product.price * product.tax), 0);
   };
 
-  // Calculate shipping based on the subtotal
   const calculateShipping = () => {
-    const subtotal = calculateSubtotal(); // Make sure we calculate the subtotal here
+    const subtotal = calculateSubtotal();
     if (subtotal > 35) {
-      return 0.00; // Free shipping if the subtotal is above 35
+      return 0.00;
     } else {
-      return 20.00; // Flat shipping fee if the subtotal is less than or equal to 35
+      return 20.00;
     }
   };
 
-  // Calculate discount (currently set to 0, but you can add your logic here)
   const calculateDiscount = () => {
-    return 0.00; // No discount in this example
+    return 0.00;
   };
 
-  // Calculate all values
   const subtotal = calculateSubtotal();
   const taxes = calculateTaxes();
   const shipping = calculateShipping();
   const discount = calculateDiscount();
 
-  // Calculate the estimated total
   const estimatedTotal = subtotal + shipping + taxes - discount;
 
   return (

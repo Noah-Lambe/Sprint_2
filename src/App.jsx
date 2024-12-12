@@ -52,7 +52,15 @@ const App = () => {
               </div>
             }
           />
-          <Route path="/checkout" element={<CheckoutPortal/>} />
+          <Route 
+            path="/checkout" 
+            element={
+              <div className='checkout-content'>
+                <OrderSummary products={products} />
+                <CheckoutPortal/>
+              </div>
+            }
+          />
         </Routes>
         <Footer />
       </Router>
