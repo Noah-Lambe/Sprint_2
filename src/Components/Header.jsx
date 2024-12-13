@@ -2,7 +2,6 @@
 // Author: Noah Whiffen - SD12
 // Dates:  December 7th, 2024 - December 8th, 2024 
 
-import React from 'react';
 import image from '../assets/images/annies_electronics.jpg';
 import accountImage from '../assets/images/account_icon.png'
 import shoppingBag from '../assets/images/shopping_bag.png'
@@ -37,7 +36,7 @@ function Header() {
             <div className="bottomHeader">
                 <nav>
                     <a
-                    href='#'
+                    href='http://localhost:5173'
                     className='headerLinks'>
                         Shop
                     </a>

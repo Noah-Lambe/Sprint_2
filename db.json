@@ -2,8 +2,8 @@
   "products": [
     {
       "id": "1",
-      "name": "Laptop",
-      "description": "A high-performance laptop for gaming and work.",
+      "name": "TechBrand ProBook 15",
+      "description": "This high-performance laptop from TechBrand combines sleek design with powerful performance. Powered by the latest processors, it is perfect for both work and play, offering smooth multitasking, high-definition displays, and long battery life. Whether you’re  working on a project, streaming videos, or gaming, this laptop will keep up with all your needs.",
       "price": 1299.99,
       "tax": 0.15,
       "category": "Computers",
@@ -15,13 +15,13 @@
         "delivery": true,
         "store": false
       },
-      "deliverySelected": true,
+      "deliverySelected": false,
       "inCart": true
     },
     {
       "id": "2",
-      "name": "Smartphone",
-      "description": "A latest generation smartphone with all the modern features.",
+      "name": "MobileTech Infinity X",
+      "description": "The MobileTech smartphone brings the best of modern technology into the palm of your hand. With a stunning display, fast performance, and a powerful camera, it delivers exceptional quality for everything from photography to gaming. Stay connected with all the latest apps and features in a sleek and durable design.",
       "price": 799.99,
       "tax": 0.15,
       "category": "Mobile Phones",
@@ -33,13 +33,13 @@
         "delivery": true,
         "store": true
       },
-      "deliverySelected": true,
+      "deliverySelected": false,
       "inCart": true
     },
     {
       "id": "3",
-      "name": "Smartwatch",
-      "description": "A smartwatch with health tracking and notifications.",
+      "name": "WearableTech FitTrack 360",
+      "description": "This advanced smartwatch from WearableTech offers health tracking, fitness monitoring, and customizable notifications, making it an essential accessory for your lifestyle. Keep track of your steps, heart rate, and sleep patterns, while staying connected with messages and reminders right from your wrist.",
       "price": 199.99,
       "tax": 0.15,
       "category": "Wearables",
@@ -51,13 +51,13 @@
         "delivery": false,
         "store": false
       },
-      "deliverySelected": true,
+      "deliverySelected": false,
       "inCart": true
     },
     {
       "id": "4",
-      "name": "Headphones",
-      "description": "Noise-cancelling wireless headphones with great sound quality.",
+      "name": "SoundTech QuietSound Pro",
+      "description": "These noise-cancelling wireless headphones from SoundTech deliver an immersive audio experience. With premium sound quality, long-lasting comfort, and intuitive touch controls, they are perfect for music lovers, commuters, or anyone seeking high-quality audio without distractions.",
       "price": 149.99,
       "tax": 0.15,
       "category": "Accessories",
@@ -69,13 +69,13 @@
         "delivery": false,
         "store": true
       },
-      "deliverySelected": true,
+      "deliverySelected": false,
       "inCart": true
     }
   ],
   "accounts": [
     {
-      "id": 1734023966162,
+      "id": "1734023966162",
       "username": "Noie lambe",
       "password": "hashed_Werewolf1997!",
       "email": "noahlambe@hotmail.ca",
@@ -111,6 +111,44 @@
       ],
       "createdAt": "2024-12-12T17:19:26.162Z",
       "updatedAt": "2024-12-12T17:19:26.162Z"
+    },
+    {
+      "id": 1734101377968,
+      "username": "Noie lambe",
+      "password": "hashed_Werewolf1",
+      "email": "noahlambe@hotmail.ca",
+      "phoneNumber": "7096974819",
+      "addresses": [
+        {
+          "id": 1,
+          "type": "primary",
+          "street": "31 Moores Dr.",
+          "unit": "A",
+          "city": "Mount Pearl",
+          "state": "NL",
+          "postalCode": "A1N 3V2",
+          "country": "Canada"
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 1,
+          "type": "credit_card",
+          "cardNumber": "************1234",
+          "expiryDate": "08/08",
+          "cvv": "123",
+          "cardholderName": "noah lambe"
+        },
+        {
+          "id": 2,
+          "type": "bank_account",
+          "bankName": "Toronto Dominion",
+          "accountNumber": "****2321",
+          "routingNumber": "123"
+        }
+      ],
+      "createdAt": "2024-12-13T14:49:37.969Z",
+      "updatedAt": "2024-12-13T14:49:37.969Z"
     }
   ]
 }

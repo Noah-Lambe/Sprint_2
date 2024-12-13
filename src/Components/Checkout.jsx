@@ -1,5 +1,3 @@
-// CheckoutPortal.jsx
-
 import React, { useState, useEffect } from 'react';
 import './Checkout.css';
 
@@ -13,6 +11,7 @@ const CheckoutPortal = () => {
     accountNumber: '',
     routingNumber: '',
   });
+  const [payments, setPayments] = useState([]);
   const [addresses, setAddresses] = useState([]);
 
   const handlePaymentChange = (method) => {
@@ -22,12 +21,20 @@ const CheckoutPortal = () => {
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
     const newPayment = { ...paymentDetails, method: paymentMethod };
-    localStorage.setItem('payments', JSON.stringify([...getStoredPayments(), newPayment]));
+    const updatedPayments = [...getStoredPayments(), newPayment];
+    localStorage.setItem('payments', JSON.stringify(updatedPayments));
+    setPayments(updatedPayments);
     setPaymentDetails({ cardNumber: '', expiryDate: '', cvv: '', bankName: '', accountNumber: '', routingNumber: '' });
   };
 
   const getStoredPayments = () => {
     return JSON.parse(localStorage.getItem('payments')) || [];
+  };
+
+  const removePayment = (index) => {
+    const updatedPayments = payments.filter((_, i) => i !== index);
+    setPayments(updatedPayments);
+    localStorage.setItem('payments', JSON.stringify(updatedPayments));
   };
 
   const handleAddressSubmit = (e) => {
@@ -44,8 +51,9 @@ const CheckoutPortal = () => {
       state: form.state.value,
       postalCode: form.postalCode.value,
     };
-    setAddresses((prev) => [...prev, newAddress]);
-    localStorage.setItem('addresses', JSON.stringify([...getStoredAddresses(), newAddress]));
+    const updatedAddresses = [...getStoredAddresses(), newAddress];
+    setAddresses(updatedAddresses);
+    localStorage.setItem('addresses', JSON.stringify(updatedAddresses));
     form.reset();
   };
 
@@ -61,6 +69,7 @@ const CheckoutPortal = () => {
 
   useEffect(() => {
     setAddresses(getStoredAddresses());
+    setPayments(getStoredPayments());
   }, []);
 
   return (
@@ -78,20 +87,37 @@ const CheckoutPortal = () => {
           </div>
           {paymentMethod === 'Card' && (
             <div className="card-details">
-              <input type="text" placeholder="Card Number" onChange={(e) => setPaymentDetails({ ...paymentDetails, cardNumber: e.target.value })} />
-              <input type="text" placeholder="Expiration Date (MM/YY)" onChange={(e) => setPaymentDetails({ ...paymentDetails, expiryDate: e.target.value })} />
-              <input type="text" placeholder="CVV" onChange={(e) => setPaymentDetails({ ...paymentDetails, cvv: e.target.value })} />
+              <input type="text" placeholder="Card Number" value={paymentDetails.cardNumber} onChange={(e) => setPaymentDetails({ ...paymentDetails, cardNumber: e.target.value })} />
+              <input type="text" placeholder="Expiration Date (MM/YY)" value={paymentDetails.expiryDate} onChange={(e) => setPaymentDetails({ ...paymentDetails, expiryDate: e.target.value })} />
+              <input type="text" placeholder="CVV" value={paymentDetails.cvv} onChange={(e) => setPaymentDetails({ ...paymentDetails, cvv: e.target.value })} />
             </div>
           )}
           {paymentMethod === 'Bank' && (
             <div className="bank-details">
-              <input type="text" placeholder="Bank Name" onChange={(e) => setPaymentDetails({ ...paymentDetails, bankName: e.target.value })} />
-              <input type="text" placeholder="Account Number" onChange={(e) => setPaymentDetails({ ...paymentDetails, accountNumber: e.target.value })} />
-              <input type="text" placeholder="Routing Number" onChange={(e) => setPaymentDetails({ ...paymentDetails, routingNumber: e.target.value })} />
+              <input type="text" placeholder="Bank Name" value={paymentDetails.bankName} onChange={(e) => setPaymentDetails({ ...paymentDetails, bankName: e.target.value })} />
+              <input type="text" placeholder="Account Number" value={paymentDetails.accountNumber} onChange={(e) => setPaymentDetails({ ...paymentDetails, accountNumber: e.target.value })} />
+              <input type="text" placeholder="Routing Number" value={paymentDetails.routingNumber} onChange={(e) => setPaymentDetails({ ...paymentDetails, routingNumber: e.target.value })} />
             </div>
           )}
-          <button type="submit" className="pay-button">Pay</button>
+          <button type="submit" className="pay-button">Save Payment</button>
         </form>
+        <div className="payment-list">
+          <h3>Saved Payment Methods</h3>
+          <ul className="address-list">
+            {payments.map((payment, index) => (
+              <li key={index}>
+                <p>Method: {payment.method}</p>
+                {payment.method === 'Card' && (
+                  <p>Card Number: **** **** **** {payment.cardNumber.slice(-4)}</p>
+                )}
+                {payment.method === 'Bank' && (
+                  <p>Bank Name: {payment.bankName}</p>
+                )}
+                <button onClick={() => removePayment(index)} className="delete-btn">Remove</button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="address-form">

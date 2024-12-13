@@ -1,17 +1,12 @@
-body {
-  margin-top: 265px;
-}
 /* General Layout */
 .checkout-portal {
   font-family: Arial, sans-serif;
   color: #333;
   width: 80%;
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   display: grid;
-  grid-template-areas:
-    "order-summary order-summary"
-    "address-form payment-section";
+  grid-template-areas: "address-form payment-section";
   gap: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -20,36 +15,10 @@ body {
   margin-top: 20px;
 }
 
-/* Order Summary */
-.order-summary {
-  grid-area: order-summary;
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-.order-summary h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.product-details p {
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
-.price-summary p {
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 0;
-  font-weight: bold;
-}
-
 /* Payment Section */
 .payment-section {
   grid-area: payment-section;
   padding: 15px;
-  border-bottom: 1px solid #ddd;
-  max-width: 100%;
 }
 
 .payment-section h2 {
@@ -93,7 +62,7 @@ body {
 .address-form {
   grid-area: address-form;
   padding: 15px;
-  width: 100%;
+  grid-column: span 1;
 }
 
 .address-form h2 {
@@ -171,4 +140,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
 }

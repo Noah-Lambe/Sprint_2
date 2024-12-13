@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 import CheckoutPortal from './Components/Checkout';
 import CheckoutSummary from './Components/CheckoutSummary';
 import AccountPage from './Components/Accounts';
-import "./App.css";
+import ProductDetails from './Components/ProductDetails';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -69,6 +69,14 @@ const App = () => {
             element={
               <div className='account-content'>
                 <AccountPage />
+              </div>
+            }
+          />
+          <Route 
+            path="/details" 
+            element={
+              <div className='details-content'>
+                <ProductDetails productId={3} />
               </div>
             }
           />
