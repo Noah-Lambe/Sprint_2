@@ -17,7 +17,7 @@ function Header() {
                 src={image}
                 alt="Annie's Electronics Header"/>
                 <a
-                href='#'
+                href='http://localhost:5173/accounts'
                 className="headerLinks"
                 >
                     <img src={accountImage}
@@ -26,7 +26,7 @@ function Header() {
                     My Account
                 </a>
                 <a 
-                href='#'
+                href='http://localhost:5173/cart'
                 className="headerLinks">
                     <img src={shoppingBag}
                          className='IconImages'

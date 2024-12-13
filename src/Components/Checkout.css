@@ -5,7 +5,7 @@ body {
 .checkout-portal {
   font-family: Arial, sans-serif;
   color: #333;
-  max-width: 800px;
+  width: 80%;
   margin: 0 auto;
   padding: 20px;
   display: grid;
@@ -17,6 +17,7 @@ body {
   border-radius: 8px;
   background-color: #f8f8f8;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* Order Summary */
@@ -48,6 +49,7 @@ body {
   grid-area: payment-section;
   padding: 15px;
   border-bottom: 1px solid #ddd;
+  max-width: 100%;
 }
 
 .payment-section h2 {
@@ -91,6 +93,7 @@ body {
 .address-form {
   grid-area: address-form;
   padding: 15px;
+  width: 100%;
 }
 
 .address-form h2 {
@@ -153,4 +156,19 @@ body {
 
 .delete-btn:hover {
   background-color: #c82333;
+}
+
+.checkout-content {
+  width: 80%;
+  margin: auto;
+  /* border: #0056b3 1px solid; */
+}
+
+.back-btn {
+  font-size: 1rem;
+  color: black;
+  background-color: #f4d06f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

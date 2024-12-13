@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderSummary = ({ products }) => {
+const CheckoutSummary = ({ products }) => {
   const calculateSubtotal = () => {
     return products.reduce((total, product) => total + product.price, 0);
   };
@@ -41,16 +41,9 @@ const OrderSummary = ({ products }) => {
       <hr />
       <h3>Estimated Total: ${estimatedTotal.toFixed(2)}</h3>
       <hr />
-      <a href="http://localhost:5173/checkout"><button className="continue-btn">Continue to Checkout</button></a>
-      <a href="http://localhost:5173"><button className="back-btn">Go back to Shop</button></a>
-      <br />
-      
-      <p className="add-info-top">Need Information on returns or shipping policies?</p>
-      <p className="add-info-bottom">
-        Please follow this link to our <a href="#">support page</a> for details.
-      </p>
+      <a href="http://localhost:5173/cart"><button className="back-btn">Back to Shopping Bag</button></a>
     </div>
   );
 };
 
-export default OrderSummary;
+export default CheckoutSummary;

@@ -72,5 +72,45 @@
       "deliverySelected": true,
       "inCart": true
     }
+  ],
+  "accounts": [
+    {
+      "id": 1734023966162,
+      "username": "Noie lambe",
+      "password": "hashed_Werewolf1997!",
+      "email": "noahlambe@hotmail.ca",
+      "phoneNumber": "7096974819",
+      "addresses": [
+        {
+          "id": 1,
+          "type": "primary",
+          "street": "31 Moores Dr.",
+          "unit": "A",
+          "city": "Mount Pearl",
+          "state": "NL",
+          "postalCode": "A1N 3V2",
+          "country": "Canada"
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 1,
+          "type": "credit_card",
+          "cardNumber": "************1234",
+          "expiryDate": "08/15",
+          "cvv": "123",
+          "cardholderName": "Noah Lambe"
+        },
+        {
+          "id": 2,
+          "type": "bank_account",
+          "bankName": "Toronto Dominion",
+          "accountNumber": "****2321",
+          "routingNumber": "123123"
+        }
+      ],
+      "createdAt": "2024-12-12T17:19:26.162Z",
+      "updatedAt": "2024-12-12T17:19:26.162Z"
+    }
   ]
 }

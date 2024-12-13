@@ -1,0 +1,127 @@
+.account-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+hr {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.logIn-btn {
+  width: 40%;
+  padding: 10px;
+  margin: auto;
+}
+
+/* Grid Areas */
+.register-section {
+  grid-area: register;
+}
+
+.login-section {
+  grid-area: login;
+}
+
+/* General Typography */
+.account-page h2 {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-page h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+form button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff8811;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #c2680e;
+}
+
+/* Logged-in Styling */
+.successfulLogIn {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.logOut-btn {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  background-color: #f4d06f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-page {
+    grid-template-areas:
+      "register"
+      "login"; /* Stack sections vertically */
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 15px;
+  }
+
+  form input,
+  form select {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

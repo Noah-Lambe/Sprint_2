@@ -7,6 +7,9 @@ import Cart from './Components/Cart';
 import MainContent from './Components/MainContent';
 import Footer from './Components/Footer';
 import CheckoutPortal from './Components/Checkout';
+import CheckoutSummary from './Components/CheckoutSummary';
+import AccountPage from './Components/Accounts';
+import "./App.css";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -56,8 +59,16 @@ const App = () => {
             path="/checkout" 
             element={
               <div className='checkout-content'>
-                <OrderSummary products={products} />
-                <CheckoutPortal/>
+                <CheckoutSummary products={products} className="order-summary-content"/>
+                <CheckoutPortal className="checkout-summary-content"/>
+              </div>
+            }
+          />
+          <Route 
+            path="/accounts" 
+            element={
+              <div className='account-content'>
+                <AccountPage />
               </div>
             }
           />
