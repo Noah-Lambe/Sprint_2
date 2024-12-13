@@ -1,27 +1,30 @@
-import { useEffect, useState } from 'react';
-import './MainContent.css';
-import logo from '../assets/images/annies_electronics.jpg';
-import ad from '../assets/images/laptopsale.png';
+import React, { useState, useEffect } from 'react'; // Import React and hooks
+import { Link } from 'react-router-dom'; // Import Link for navigation
+import './MainContent.css'; // Import your CSS file
+import logo from '../assets/images/annies_electronics.jpg'; // Import logo
+import ad from '../assets/images/laptopsale.png'; // Import ad image
 
 function MainContent() {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [products, setProducts] = useState([]); // State for products
+    const [loading, setLoading] = useState(true); // State for loading status
 
+    // Fetch products from the server when the component mounts
     useEffect(() => {
         fetch("http://localhost:3000/products")
             .then((response) => response.json())
             .then((data) => {
-                setProducts(data);
-                setLoading(false);
+                setProducts(data); // Store the fetched products
+                setLoading(false); // Set loading to false
             })
             .catch((error) => {
                 console.error("Error fetching product data:", error);
-                setLoading(false);
+                setLoading(false); // Handle fetch errors
             });
     }, []);
 
+    // Handle adding a product to the cart
     const handleAddToCart = (id) => {
-        // Update the server
+        // Update the server to mark the product as "inCart"
         fetch(`http://localhost:3000/products/${id}`, {
             method: "PATCH",
             headers: {
@@ -33,7 +36,7 @@ function MainContent() {
                 if (!response.ok) {
                     throw new Error("Failed to update server");
                 }
-                // Update the local state
+                // Update the local state to reflect the change
                 setProducts((prevProducts) =>
                     prevProducts.map((product) =>
                         product.id === id ? { ...product, inCart: true } : product
@@ -45,6 +48,7 @@ function MainContent() {
             });
     };
 
+    // Show a loading message while data is being fetched
     if (loading) return <p>Loading...</p>;
 
     return (
@@ -66,8 +70,12 @@ function MainContent() {
                             {products.map((product) => (
                                 <div className="product-card1" key={product.id}>
                                     <img src={product.image} alt={product.name} className="product-image1" />
-                                    <h3 className="product-name1">{product.name}</h3>
+                                    {/* Link to navigate to the product details page */}
+                                    <Link to={`/product/${product.id}`} className="product-name1">
+                                        {product.name}
+                                    </Link>
                                     <p className="product-price">${product.price.toFixed(2)}</p>
+                                    {/* Add to Cart Button */}
                                     <button
                                         className="add-to-cart"
                                         onClick={() => handleAddToCart(product.id)}

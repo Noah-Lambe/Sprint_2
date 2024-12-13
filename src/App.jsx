@@ -72,14 +72,7 @@ const App = () => {
               </div>
             }
           />
-          <Route 
-            path="/details" 
-            element={
-              <div className='details-content'>
-                <ProductDetails productId={3} />
-              </div>
-            }
-          />
+          <Route path="/product/:productId" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </Router>
