@@ -109,8 +109,8 @@ form button:hover {
   .account-page {
     grid-template-areas:
       "register"
-      "login"; /* Stack sections vertically */
-    grid-template-columns: 1fr; /* Single column layout */
+      "login";
+    grid-template-columns: 1fr;
     padding: 15px;
   }
 

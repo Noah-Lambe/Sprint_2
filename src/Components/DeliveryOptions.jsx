@@ -9,7 +9,7 @@ const DeliveryOptions = ({ onCartUpdate }) => {
     fetch("http://localhost:3000/products")
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data); // Load products into state
+        setProducts(data);
       })
       .catch((error) => {
         console.error("Error fetching product data:", error);
@@ -40,16 +40,15 @@ const DeliveryOptions = ({ onCartUpdate }) => {
 
             const updatedProduct = await response.json();
             console.log("Successfully updated product:", updatedProduct);
-            return updatedProduct; // Return updated product
+            return updatedProduct;
           } catch (error) {
             console.error("Error updating delivery option:", error);
           }
         }
-        return product; // Return product unchanged if not in cart
+        return product;
       })
     );
 
-    // Update local state with updated products
     setProducts(updatedProducts);
   };
 
