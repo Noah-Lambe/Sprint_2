@@ -15,8 +15,8 @@
         "delivery": true,
         "store": false
       },
-      "deliverySelected": true,
-      "inCart": false
+      "deliverySelected": false,
+      "inCart": true
     },
     {
       "id": "2",
@@ -73,5 +73,44 @@
       "inCart": false
     }
   ],
-  "accounts": []
+  "accounts": [
+    {
+      "id": 1734203845627,
+      "username": "Noah Lambe",
+      "password": "hashed_Werewolf1",
+      "email": "noahlambe@hotmail.ca",
+      "phoneNumber": "7096974819",
+      "addresses": [
+        {
+          "id": 1,
+          "type": "primary",
+          "street": "31 Moores Dr.",
+          "unit": "A",
+          "city": "Mount Pearl",
+          "state": "NL",
+          "postalCode": "A1N 3V2",
+          "country": "Canada"
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 1,
+          "type": "credit_card",
+          "cardNumber": "********1234",
+          "expiryDate": "01/01",
+          "cvv": "123",
+          "cardholderName": "Noah Lambe"
+        },
+        {
+          "id": 2,
+          "type": "bank_account",
+          "bankName": "TD",
+          "accountNumber": "*****3123",
+          "routingNumber": "123"
+        }
+      ],
+      "createdAt": "2024-12-14T19:17:25.627Z",
+      "updatedAt": "2024-12-14T19:17:25.627Z"
+    }
+  ]
 }

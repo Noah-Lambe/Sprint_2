@@ -76,7 +76,7 @@ function MainContent() {
                                         onClick={() => handleAddToCart(product.id)}
                                         disabled={product.inCart}
                                     >
-                                        {product.inCart ? "In Cart" : "Add to Cart"}
+                                        {product.inCart ? "In Cart" : "Add to Bag"}
                                     </button>
                                 </div>
                             ))}
