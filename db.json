@@ -15,8 +15,8 @@
         "delivery": true,
         "store": false
       },
-      "deliverySelected": false,
-      "inCart": false
+      "deliverySelected": true,
+      "inCart": true
     },
     {
       "id": "2",
@@ -34,7 +34,7 @@
         "store": true
       },
       "deliverySelected": false,
-      "inCart": false
+      "inCart": true
     },
     {
       "id": "3",
@@ -52,7 +52,7 @@
         "store": false
       },
       "deliverySelected": false,
-      "inCart": false
+      "inCart": true
     },
     {
       "id": "4",
@@ -70,7 +70,7 @@
         "store": true
       },
       "deliverySelected": false,
-      "inCart": false
+      "inCart": true
     }
   ],
   "accounts": []

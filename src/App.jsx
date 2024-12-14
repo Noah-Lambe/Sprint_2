@@ -10,6 +10,7 @@ import CheckoutPortal from './Components/Checkout';
 import CheckoutSummary from './Components/CheckoutSummary';
 import AccountPage from './Components/Accounts';
 import ProductDetails from './Components/ProductDetails';
+import './App.css';
 
 const App = () => {
   const [products, setProducts] = useState([]);

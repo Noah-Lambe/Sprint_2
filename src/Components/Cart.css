@@ -138,10 +138,10 @@ body {
   margin: auto;
 }
 
-.price {
+/* .price {
   font-size: 16px;
   margin-bottom: 16px;
-}
+} */
 
 .remove-button {
   background-color: #392e5a;
@@ -251,10 +251,6 @@ hr {
   width: 100%;
   border: 0;
   border-top: 1px solid #757575;
-}
-
-svg {
-  color: #008c64;
 }
 
 /* Responsive Design */
