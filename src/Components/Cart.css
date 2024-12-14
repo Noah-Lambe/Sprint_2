@@ -253,6 +253,16 @@ hr {
   border-top: 1px solid #757575;
 }
 
+.empty-message {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 18px;
+  grid-column: span 2;
+  font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .content-box {

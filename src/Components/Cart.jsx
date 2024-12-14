@@ -51,7 +51,7 @@ const Cart = ({ onCartUpdate }) => {
   }
 
   if (products.length === 0) {
-    return <div>Your shopping bag is empty!</div>;
+    return <div className="empty-message">Your shopping bag is empty!</div>;
   }
 
   return (
