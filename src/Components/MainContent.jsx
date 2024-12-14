@@ -5,26 +5,25 @@ import logo from '../assets/images/annies_electronics.jpg'; // Import logo
 import ad from '../assets/images/laptopsale.png'; // Import ad image
 
 function MainContent() {
-    const [products, setProducts] = useState([]); // State for products
-    const [loading, setLoading] = useState(true); // State for loading status
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     // Fetch products from the server when the component mounts
     useEffect(() => {
         fetch("http://localhost:3000/products")
             .then((response) => response.json())
             .then((data) => {
-                setProducts(data); // Store the fetched products
-                setLoading(false); // Set loading to false
+                setProducts(data);
+                setLoading(false);
             })
             .catch((error) => {
                 console.error("Error fetching product data:", error);
-                setLoading(false); // Handle fetch errors
+                setLoading(false);
             });
     }, []);
 
     // Handle adding a product to the cart
     const handleAddToCart = (id) => {
-        // Update the server to mark the product as "inCart"
         fetch(`http://localhost:3000/products/${id}`, {
             method: "PATCH",
             headers: {
@@ -36,7 +35,6 @@ function MainContent() {
                 if (!response.ok) {
                     throw new Error("Failed to update server");
                 }
-                // Update the local state to reflect the change
                 setProducts((prevProducts) =>
                     prevProducts.map((product) =>
                         product.id === id ? { ...product, inCart: true } : product
@@ -48,7 +46,6 @@ function MainContent() {
             });
     };
 
-    // Show a loading message while data is being fetched
     if (loading) return <p>Loading...</p>;
 
     return (
@@ -70,12 +67,10 @@ function MainContent() {
                             {products.map((product) => (
                                 <div className="product-card1" key={product.id}>
                                     <img src={product.image} alt={product.name} className="product-image1" />
-                                    {/* Link to navigate to the product details page */}
                                     <Link to={`/product/${product.id}`} className="product-name1">
                                         {product.name}
                                     </Link>
                                     <p className="product-price">${product.price.toFixed(2)}</p>
-                                    {/* Add to Cart Button */}
                                     <button
                                         className="add-to-cart"
                                         onClick={() => handleAddToCart(product.id)}

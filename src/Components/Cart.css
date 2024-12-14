@@ -80,14 +80,14 @@ body {
   color: #333;
 }
 
-/* Product Cards Container (grid container for all product cards) */
+/* Product Cards Container */
 .product-cards {
   grid-area: product-cards;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
-  grid-column: span 2; /* Span across two columns on large screens */
+  grid-column: span 2;
 }
 
 .product-cards hr {
@@ -269,7 +269,7 @@ svg {
   }
 
   .product-cards {
-    grid-template-columns: 1fr; /* Switch to one column on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .order-summary {
