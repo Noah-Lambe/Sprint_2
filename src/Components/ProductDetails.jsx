@@ -4,44 +4,58 @@ import shoppingBag from '/assets/images/shopping_bag.png';
 import './ProductDetails.css';
 
 function ProductDetails() {
-    const { productId } = useParams(); // Extract productId from URL
-    const [product, setProduct] = useState(null);
-    const [quantity, setQuantity] = useState(1);
+    const { productId } = useParams(); // Get productId from the URL
+    const [product, setProduct] = useState(null); // State for the product
+    const [loading, setLoading] = useState(true); // State for loading status
 
     useEffect(() => {
-        fetch("http://localhost:3000/products")
-            .then((response) => response.json())
-            .then((data) => {
-                const selectedProduct = data.products.find(item => item.id === String(productId));
-                setProduct(selectedProduct);
+        // Fetch product details from the server
+        fetch(`http://localhost:3000/products/${productId}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch product data");
+                }
+                return response.json();
             })
-            .catch(error => console.error('Error fetching product data:', error));
+            .then((data) => {
+                setProduct(data); // Set the product state
+                setLoading(false); // Loading is complete
+            })
+            .catch((error) => {
+                console.error("Error fetching product data:", error);
+                setLoading(false); // Stop loading even if there's an error
+            });
     }, [productId]);
 
-    const handleQuantityChange = (event) => {
-        setQuantity(Number(event.target.value));
-    };
+    // If still loading, show a loading message
+    if (loading) return <div>Loading...</div>;
 
-    if (!product) {
-        return <div>Loading...</div>;
-    }
+    // If no product is found, show an error message
+    if (!product) return <div>Product not found</div>;
 
+    // Render the product details
     return (
-        <div className='wrapper'>
-            <div className='image-container'>
+        <div className="wrapper">
+            <div className="image-container">
                 <img className="productImage" src={product.image} alt={product.name} />
                 <p>{product.description}</p>
             </div>
-            <div className='price-container'>
+            <div className="price-container">
                 <p>{product.name}</p>
-                <div className='button-wrapper'>
+                <div className="button-wrapper">
                     <p>${product.price}</p>
-                    <button className='cartButton'>
-                        <img src={shoppingBag} className='shoppingBag' alt="Shopping Bag" />
+                    <button className="cartButton">
+                        <img src={shoppingBag} className="shoppingBag" alt="Shopping Bag" />
                         Add to Bag
                     </button>
                 </div>
-                {/* Other UI elements */}
+                <div className="delivery-container">
+                    <p>
+                        FREE delivery Tuesday, December 10th
+                        <br />
+                        Or fastest delivery, Monday, December 9th.
+                    </p>
+                </div>
             </div>
         </div>
     );
