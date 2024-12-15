@@ -4,5 +4,5 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom
 npm install react-router-dom
 npm install --save-dev jsdom
 
-Requred for footer:
+Required for footer:
 npm install react-icons
