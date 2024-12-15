@@ -15,7 +15,7 @@
         "delivery": true,
         "store": false
       },
-      "deliverySelected": false,
+      "deliverySelected": true,
       "inCart": true
     },
     {
@@ -33,7 +33,7 @@
         "delivery": true,
         "store": true
       },
-      "deliverySelected": false,
+      "deliverySelected": true,
       "inCart": false
     },
     {
@@ -69,9 +69,48 @@
         "delivery": false,
         "store": true
       },
-      "deliverySelected": false,
-      "inCart": false
+      "deliverySelected": true,
+      "inCart": true
     }
   ],
-  "accounts": []
+  "accounts": [
+    {
+      "id": 1734220951377,
+      "username": "Bob Wullmer",
+      "password": "hashed_Happybob1",
+      "email": "bobwullmer@gmail.com",
+      "phoneNumber": "5554441234",
+      "addresses": [
+        {
+          "id": 1,
+          "type": "primary",
+          "street": "100 Software Dr.",
+          "unit": "A",
+          "city": "Toronto",
+          "state": "ON",
+          "postalCode": "A1A 1A1",
+          "country": "Canada"
+        }
+      ],
+      "paymentMethods": [
+        {
+          "id": 1,
+          "type": "credit_card",
+          "cardNumber": "********1234",
+          "expiryDate": "01/01",
+          "cvv": "123",
+          "cardholderName": "Bob Wullmer"
+        },
+        {
+          "id": 2,
+          "type": "bank_account",
+          "bankName": "TD",
+          "accountNumber": "****2321",
+          "routingNumber": "123"
+        }
+      ],
+      "createdAt": "2024-12-15T00:02:31.377Z",
+      "updatedAt": "2024-12-15T00:02:31.377Z"
+    }
+  ]
 }
