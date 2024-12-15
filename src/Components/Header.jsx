@@ -16,7 +16,7 @@ function Header() {
                 src={image}
                 alt="Annie's Electronics Header"/>
                 <a
-                href='http://localhost:5173/accounts'
+                href='/accounts'
                 className="headerLinks"
                 >
                     <img src={accountImage}
@@ -25,7 +25,7 @@ function Header() {
                     My Account
                 </a>
                 <a 
-                href='http://localhost:5173/cart'
+                href='/cart'
                 className="headerLinks">
                     <img src={shoppingBag}
                          className='IconImages'
@@ -36,7 +36,7 @@ function Header() {
             <div className="bottomHeader">
                 <nav>
                     <a
-                    href='http://localhost:5173'
+                    href='/'
                     className='headerLinks'>
                         Shop
                     </a>
