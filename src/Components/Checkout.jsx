@@ -131,8 +131,26 @@ const CheckoutPortal = () => {
           <input type="text" name="city" placeholder="City" required />
           <select name="state" required>
             <option value="">Select State</option>
-            <option value="Other">Other</option>
-            {/* Add state options here */}
+            <option value="Newfoundland & Labrador">
+                  Newfoundland & Labrador
+                </option>
+                <option value="Prince Edward Island">
+                  Prince Edward Island
+                </option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Alberta">Alberta</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Yukon">Yukon</option>
+                <option value="Northwest Territories">
+                  Northwest Territories
+                </option>
+                <option value="Nunavut">Nunavut</option>
+                <option value="Other">Other</option>
           </select>
           <input type="text" name="postalCode" placeholder="Postal Code" required />
           <button type="submit" className="submit-btn">Add Address</button>
