@@ -1,3 +1,7 @@
+/* Title:  Semester 2 Final Sprint
+   Author: Noah Whiffen, Jonathan Strickland, Noah Lambe - SD12
+   Dates:  December 14th, 2024 */
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import OrderSummary from './Components/OrderSummary';

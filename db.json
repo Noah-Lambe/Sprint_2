@@ -16,7 +16,7 @@
         "store": false
       },
       "deliverySelected": true,
-      "inCart": true
+      "inCart": false
     },
     {
       "id": "2",
@@ -70,12 +70,12 @@
         "store": true
       },
       "deliverySelected": true,
-      "inCart": true
+      "inCart": false
     }
   ],
   "accounts": [
     {
-      "id": 1734220951377,
+      "id": "1734220951377",
       "username": "Bob Wullmer",
       "password": "hashed_Happybob1",
       "email": "bobwullmer@gmail.com",
